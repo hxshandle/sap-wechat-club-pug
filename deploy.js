@@ -12,11 +12,11 @@ fs.readdirSync(baseDir).forEach(
         var p = baseDir + "/" + a;
         if(fs.statSync(p).isDirectory()){
             // read it out
-            if(fs.existsSync(p + "/tmpl.html")){
-                var fn = pug.compileFileClient(p + "/tmpl.html",{"name":a,inlineRuntimeFunctions:false});
+            if(fs.existsSync(p + "/tmpl.pug")){
+                var fn = pug.compileFileClient(p + "/tmpl.pug",{"name":a,inlineRuntimeFunctions:false});
                 arr.push(a);
                 arr.push(fn);
-            }else console.log("missing " + a + "template html!");
+            }else console.log("missing " + a + "template pug!");
         }
     }
 );
