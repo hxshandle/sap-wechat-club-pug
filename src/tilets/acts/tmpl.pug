@@ -1,0 +1,35 @@
+.weui-tab(style='position:fixed;left:0px; bottom:0px;width:100%')
+  .weui-navbar
+    .weui-navbar__item
+      a(href='#home-0')
+        i.fa.fa-home.fa-fw
+    .weui-navbar__item.weui-bar__item_on
+      a(href='#acts-0')
+        i.fa.fa-calendar.fa-fw
+    .weui-navbar__item
+      a(href='#club-0')
+        i.fa.fa-users.fa-fw
+  .weui-tab__panel
+    // main page
+    ul.activity-list
+      each obj in data
+        li.item
+            .active-item
+                .image-outer
+                    a(href='#actdetail-' + obj.id + '-0')
+                        img.band(src=obj.filename, alt='')
+                .info
+                    .title-1
+                        a(href='#actdetail-' + obj.id + '-0') #{obj.title} #{(parseInt(obj.flag) & 1) == 0 ? "(等待批准)" : ""}
+                    .sub-info
+                      i.fa.fa-user-o
+                        span.count #{obj.usercnt}
+                    .sub-info
+                        i.fa.fa-clock-o
+                        span.count #{obj.lastupdate}
+                    .sub-info
+                        i.fa.fa-map-marker
+                        span.address #{obj.nickname}/#{obj.location}
+#buger
+style
+  include style.css
