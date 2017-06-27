@@ -1,0 +1,44 @@
+<h2>创建俱乐部</h2>
+<div class="weui-cells__title">俱乐部名称</div>
+<div class="weui-cells">
+<div class="weui-cell">
+<div class="weui-cell__bd">
+<input class="weui-input" type="text" name="cname" id="cname" placeholder="请输入俱乐部名称">
+<input type=hidden id="cid" name="cid" value="0" />
+</div>
+</div>
+</div>
+
+<div class="weui-cells__title">俱乐部说明</div>
+<div class="weui-cells weui-cells_form">
+<div class="weui-cell">
+<div class="weui-cell__bd">
+<textarea class="weui-textarea" placeholder="请输入文本" rows="3" name="csumm" id="csumm"></textarea>
+<!--<div class="weui-textarea-counter"><span>0</span>/200</div>-->
+</div>
+</div>
+</div>
+
+<div class="weui-cells__title">俱乐部Logo</div>
+<div class="weui-uploader__bd weui-cell">
+<ul class="weui-uploader__files" id="uploaderFiles">
+<li class="weui-uploader__file" id="upho"></li>
+</ul>
+<input type="hidden" name="clogo" id="clogo" value="0" />
+<div class="weui-uploader__input-box">
+<form action="./base.aspx?a=upload&code=${id}" method="post" enctype="multipart/form-data" target="fup" id="myform" onchange="this.submit();">
+<input id="uploaderInput" class="weui-uploader__input" type="file" name="logofile" accept="image/*" multiple=""></form>
+<iframe style="display:none" name="fup" id="fup"></iframe>
+</div>
+</div>
+
+<div style="min-height:100px;height:100px"></div>
+
+<div class="buttons">
+<a href="javascript:history.back();" class="weui-btn weui-btn weui-btn_default">取消</a>
+<a href="javascript:;" onclick="c(this,'add');" class="weui-btn weui-btn_primary">保存</a>
+</div>
+
+<style>
+include style.css
+</style>

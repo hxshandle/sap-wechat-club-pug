@@ -1,0 +1,39 @@
+<div class="weui-tab" style="position:fixed;left:0px; bottom:0px;width:100%">
+<div class="weui-navbar">
+<div class="weui-navbar__item"><a href="#home-0"><i class="fa fa-home fa-fw"></i></a></div>
+<div class="weui-navbar__item weui-bar__item_on"><a href="#acts-0"><i class="fa fa-calendar fa-fw"></i></a></div>
+<div class="weui-navbar__item"><a href="#club-0"><i class="fa fa-users fa-fw"></i></a></div>
+</div>
+<div class="weui-tab__panel">
+<!--main page-->
+<ul class="activity-list">
+each obj in data
+    <li class="item">
+    <div class="active-item">
+    <div class="image-outer"><a href="#actdetail-#{obj.id}-0">
+    <img src="#{obj.filename}" alt="" class="band">
+    </div>
+    <div class="info">
+    <div class="title-1"><a href="#actdetail-#{obj.id}-0">#{obj.title} #{(parseInt(obj.flag) & 1) == 0 ? "(等待批准)" : ""}</a></div>
+    <div class="sub-info">
+    <i class="fa fa-user-o"></i>
+    <span class="count">#{obj.usercnt}</span>
+    </div>
+    <div class="sub-info">
+    <i class="fa fa-clock-o"></i>
+    <span class="count">#{obj.lastupdate}</span>
+    </div>
+    <div class="sub-info">
+    <i class="fa fa-map-marker"></i>
+    <span class="address">#{obj.nickname}/#{obj.location}</span>
+    </div>
+    </div>
+    </div>
+    </li>
+</ul>
+</div>
+</div>
+<div id="buger"></div>
+<style type="text/css">
+include style.css
+</style>

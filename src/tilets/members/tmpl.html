@@ -1,0 +1,31 @@
+<div class="panel-members panel">
+if (approvecmd)
+  <span>申请中共计#{usercnt}人 <a class="" href="javascript:void(0);" onclick="c(this,'#{approvecmd}',-1);">全部批准</a> | <a class="" href="javascript:void(0);" onclick="c(this,'#{declinecmd}',-1);">全部拒绝</a></span>
+  <ul class="team-member-lists">
+    each obj,i in data
+      if ((parseInt(obj.flag) & 1) == 0)
+          <li class="user_item">
+          <a href="javascript:;">
+          <img src="#{obj.avatar}" alt="" style="width:90px;height:90px">
+          <div class="user__name">#{obj.nickname} !{obj.gradename}</div>
+          </a> <a href="javascript:void(0);" onclick="c(this,'#{approvecmd}',#{obj.id});">批准</a> | <a href="javascript:void(0);" onclick="c(this,'#{declinecmd}',#{obj.id});">拒绝</a>
+          </li>
+  </ul>
+  </div>
+  <div class="panel-members panel">
+  <span>正式人员共计#{approvecmd ? data.length  - usercnt : data.length}人 <a class="" href="javascript:void(0);" onclick="c(this,'#{removecmd}',-1);">全部删除</a></span>
+
+<ul class="team-member-lists">
+  each obj,i in data
+    if (!(approvecmd && (parseInt(obj.flag) & 1) == 0))
+      <li class="user_item">
+      <a href="javascript:;">
+      <img src="#{obj.avatar}" alt="" style="width:90px;height:90px">
+      <div class="user__name">#{obj.nickname} !{obj.gradename}</div>
+      </a> <a href="javascript:void(0);" onclick="c(this,'#{removecmd}',#{obj.id});">#{removecmdname || "删除"}</a>
+      </li>
+</ul>
+</div>
+<style>
+include style.css
+</style>

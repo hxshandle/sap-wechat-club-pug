@@ -1,0 +1,80 @@
+<div class="weui-tab" style="position:fixed;left:0px; bottom:0px;width:100%">
+<div class="weui-navbar">
+<div class="weui-navbar__item"><a href="#home-0"><i class="fa fa-home fa-fw"></i></a></div>
+<div class="weui-navbar__item"><a href="#acts-0"><i class="fa fa-calendar fa-fw"></i></a></div>
+<div class="weui-navbar__item weui-bar__item_on"><a href="#club-0"><i class="fa fa-users fa-fw"></i></a></div>
+</div>
+<div class="weui-tab__panel">
+<div class="header-container">
+<img class="header-image" src="#{data[0].filename}" alt=""  />
+<div class="header">
+<h1 class="main-heading">#{data[0].title}</h1>
+<input type=hidden id="cid" name="cid" value="#{data[0].id}" />
+<div class="club-actions" id="tagme">
+<!--<button class="change" onclick="goto()">变更</button>
+<button class="change" onclick="goto()">更换logo</button>-->
+</div>
+</div>
+</div>
+<div class="body" id="psumm">
+<!--album-->
+<h2>俱乐部介绍</h2>
+<table>
+<tr><td><i class="fa fa-unlock"></i></td><td>#{data[0].status}</td></tr>
+<tr><td><i class="fa fa-users"></i></td><td>#{data[0].usercnt}</td></tr>
+<tr><td><i class="fa fa-user-o"></i></td><td>#{data[0].nickname}</td></tr>
+if parseInt(data[0].grade)>=0
+    <tr><td><i class="fa fa-certificate"></i></td><td>#{data[0].grade}级 !{data[0].gradename}</td></tr>
+if parseInt(data[0].score)>=0
+    <tr><td><i class="fa fa-star-half-o"></i></td><td>#{data[0].score}</td></tr>
+</table>
+
+<p>#{data[0].summary}</p>
+
+<div class="panel-albums panel">
+<div class="albums">
+<div class="album">
+<img src="https://unsplash.it/1000/400/?random" alt="">
+</div>
+<div class="album">
+<img src="https://unsplash.it/600/500/?random" alt="">
+</div>
+<div class="album">
+<img src="https://unsplash.it/600/400/?random" alt="">
+</div>
+<div class="album">
+<img src="https://unsplash.it/900/800/?random" alt="">
+</div>
+<div class="album">
+<img src="https://unsplash.it/300/400/?random" alt="">
+</div>
+<div class="album">
+<img src="https://unsplash.it/1024/768/?random" alt="">
+</div>
+</div>
+</div>
+</div>
+<div class="body" id="pmembers" style="display:none">
+<h2>成员</h2>
+<div id="members"></div>
+</div>
+<div class="body" id="pacts" style="display:none">
+<h2>活动清单
+<a class="add-item" href="#addact-#{data[0].id}"><i class="fa fa-plus"></i></a>
+</h2>
+<div id="acts"></div>
+</div>
+<div class="body" id="plive" style="display:none">
+<h2>讨论</h2>
+<div id="cmts"></div>
+</div>
+<div class="body" id="prules" style="display:none">
+<h2>规则</h2>
+<div id="rules"></div>
+</div>
+</div>
+</div>
+<div id="buger"></div>
+<style>
+include style.css
+</style>

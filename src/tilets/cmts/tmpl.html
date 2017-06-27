@@ -1,0 +1,48 @@
+#comments-view
+  input(type="hidden",name='pos',id='pos',value=udata.start)
+  button(type='button',class='btn btn-default', id='new-comment-btn', onclick="c(this,'prepare',0);")
+    span(class="glyphicon glyphicon-pencil")
+      |新的发言
+
+  div.comment-list
+    div.paginationer
+    each obj,i in data
+      if (i < 20)
+        div.comment-item
+          div(class='orignial comment')
+          div
+            img(src=obj.avatar,style='width:32px;height:32px;')
+            span
+              |#{obj.nickname}
+            span
+              |@ #{obj.createdate}
+            span(type="button",onclick="c(this,'prepare'," + obj.id + ");", class="reply-btn glyphicon glyphicon-comment pull-right")
+              |reply
+          div(class="well well-sm")
+            |!{obj.summary}
+            each obj2 in obj.children
+              div(class="reply comment")
+                div
+                  img(src=obj2.avatar,style='width:32px;height:32px;')
+                  span
+                    |#{obj2.nickname}
+                  span
+                    |@ #{obj2.createdate}
+                div(class="well well-sm")
+                  |!{obj2.summary}
+    div.paginationer
+
+div(id="comment-form", style="display:none")
+  #upho
+  form(action="./base.aspx?a=upload&code=" + id, method="post", data-ajax="false", enctype="multipart/form-data", target="fup", id="myform")
+    div.form-group
+      input(class="form-control", type="file", id="logo", name="logo", accept="image/*" capture="camera")
+      input(type="submit", name="bb", class="ui-btn", value="Upload Photo")
+  iframe(style="display:none", name="fup", id="fup")
+  input(type="hidden", value="" ,name="phoid", id="phoid")
+  textarea(class="form-control", rows="3", id="cmtcont", name="cmtcont")
+  input( type="hidden", id="cmtparent", name="cmtparent", value="0")
+  button(id="post-btn", type="submit", class="btn btn-primary pull-right", onclick="c(this,'addcmt');")
+    |发表
+  button(id="post-btn", type="button", class="btn pull-right", onclick="c(this,'prepare',-1);")
+    |取消

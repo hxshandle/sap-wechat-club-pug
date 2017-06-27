@@ -1,0 +1,11 @@
+<nav class="float-menu">
+<input type="checkbox" href="java" class="menu-open" id="menu-open" />
+<label class="menu-open-button" for="menu-open">
+<span class="burger"></span>
+</label>
+each obj in uo
+    <a href="#{obj.href || "javascript:;"}" class="nav-item" onclick="#{obj.click || ""}"><i class="fa fa-#{obj.icon}"></i></a>
+</nav>
+<style>
+include style.css
+</style>

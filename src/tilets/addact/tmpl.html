@@ -1,0 +1,92 @@
+<h2>创建活动</h2>
+<div class="weui-cells__title">所属俱乐部</div>
+<div class="weui-cells">
+<div class="weui-cell weui-cell_select">
+<div class="weui-cell__bd"><div id="clubs"></div>
+<!--<select class="weui-select" name="clubSelector">
+<option selected="" value="1">俱乐部1</option>
+<option value="2">俱乐部2</option>
+<option value="3">俱乐部3</option>
+</select>-->
+</div>
+</div>
+</div>
+
+<div class="weui-cells__title">活动名称</div>
+<div class="weui-cells">
+<div class="weui-cell">
+<div class="weui-cell__bd">
+<input class="weui-input" type="text" id="cname" name="cname" placeholder="请输入...">
+<input type=hidden id="cid" name="cid" value="0" />
+</div>
+</div>
+</div>
+
+<div class="weui-cells__title">活动地点</div>
+<div class="weui-cells">
+<div class="weui-cell">
+<div class="weui-cell__bd">
+<textarea class="weui-textarea" placeholder="请输入..." rows="3" id="location" name="location"></textarea>
+</div>
+</div>
+</div>
+
+<div class="weui-cells__title">开始日期</div>
+<div class="weui-cells">
+<div class="weui-cell">
+<div class="weui-cell__bd">
+<input class="weui-input" name="stdate" id="stdate" type="datetime-local" value="" placeholder="">
+</div>
+</div>
+</div>
+
+<div class="weui-cells__title">结束日期</div>
+<div class="weui-cells">
+<div class="weui-cell">
+<div class="weui-cell__bd">
+<input class="weui-input" name="eddate" id="eddate" type="datetime-local" value="" placeholder="">
+</div>
+</div>
+</div>
+
+<div class="weui-cells__title">开放信息</div>
+<div class="weui-cell weui-cell_switch">
+<div class="weui-cell__bd">仅对成员开放</div>
+<div class="weui-cell__ft">
+<label for="switchCP" class="weui-switch-cp">
+<input id="memberOnly" name="memberOnly" class="weui-switch-cp__input" type="checkbox" checked="checked">
+<div class="weui-switch-cp__box"></div>
+</label>
+</div>
+</div>
+<div class="weui-cells__title">活动头像</div>
+<div class="weui-uploader__bd weui-cell">
+<ul class="weui-uploader__files" id="uploaderFiles">
+<li class="weui-uploader__file" id="upho"></li>
+</ul>
+<input type="hidden" name="clogo" id="clogo" value="0" />
+<div class="weui-uploader__input-box">
+<form action="./base.aspx?a=upload&code=${id}" method="post" enctype="multipart/form-data" target="fup" id="myform" onchange="this.submit();">
+<input id="uploaderInput" class="weui-uploader__input" type="file" name="logofile" accept="image/*" multiple=""></form>
+<iframe style="display:none" name="fup" id="fup"></iframe>
+</div>
+</div>
+
+<div class="weui-cells__title">活动介绍</div>
+<div class="weui-cells weui-cells_form">
+<div class="weui-cell">
+<div class="weui-cell__bd">
+<textarea class="weui-textarea" placeholder="请输入..." rows="3" name="csumm" id="csumm"></textarea>
+</div>
+</div>
+</div>
+<div style="min-height:100px;height:100px"></div>
+
+<div class="buttons">
+<a href="javascript:history.back();" class="weui-btn weui-btn weui-btn_default">取消</a>
+<a href="javascript:;" onclick="c(this,'add');" class="weui-btn weui-btn_primary">保存</a>
+</div>
+
+<style>
+include style.css
+</style>

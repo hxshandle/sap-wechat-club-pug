@@ -1,0 +1,75 @@
+.activity-list {
+padding: 0px;
+margin: 0px;
+}
+
+.activity-list .item {
+padding: 0px;
+list-style: none;
+margin: 1rem;
+}
+
+.activity-list .item .active-item {
+height: 120px;
+overflow: hidden;
+border: 1px solid rgba(0, 0, 0, 0.1);
+display: flex;
+background: #fff;
+box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.activity-list .item .active-item .image-outer {
+position: relative;
+width: 120px;
+height: 120px;
+background: #f1f1f1;
+}
+
+.activity-list .item .active-item img.band {
+max-width: 120px;
+max-height: 120px;
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+margin: auto;
+}
+
+.activity-list .item .active-item .info {
+padding: 0.5rem 1rem;
+flex: 1;
+}
+
+.activity-list .item .active-item .info .title-1 {
+font-size: 1rem;
+text-overflow: ellipsis;
+overflow: hidden;
+width: 200px;
+display: inline-block;
+white-space: nowrap;
+}
+
+.activity-list .item .active-item .info .title-2 {
+font-size: 1rem;
+}
+
+.activity-list .item .active-item .info .sub-info {
+color: #444;
+}
+
+.activity-list .item .active-item .info .sub-info i {
+margin-right: 0.25rem;
+}
+
+.activity-list .item .active-item .info .sub-info span {
+font-size: 0.75rem;
+}
+
+.activity-list .item .active-item .info .sub-info span.address {
+text-overflow: ellipsis;
+display: inline-block;
+overflow: hidden;
+width: 180px;
+white-space: nowrap;
+}

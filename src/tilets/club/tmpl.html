@@ -1,0 +1,39 @@
+<div class="weui-tab" style="position:fixed;left:0px; bottom:0px;width:100%">
+<div class="weui-navbar">
+<div class="weui-navbar__item"><a href="#home-0"><i class="fa fa-home fa-fw"></i></a></div>
+<div class="weui-navbar__item"><a href="#acts-0"><i class="fa fa-calendar fa-fw"></i></a></div>
+<div class="weui-navbar__item weui-bar__item_on"><a href="#club-0"><i class="fa fa-users fa-fw"></i></a></div>
+</div>
+<div class="weui-tab__panel">
+<!--main page-->
+<div class="main-content">
+<ul class="club-list">
+each  obj in data
+    <li class="club-item">
+    <div class="club-outer">
+    <div class="img-outer"><a href="#clubdetail-#{obj.id}-0">
+    <img src="#{obj.filename}" alt="#{obj.title}" class="band"></a>
+    </div>
+    <div class="info">
+    <div class="title">
+    <i class="fa fa-user-o"></i>
+    <span class="club-user-count">#{obj.usercnt}</span>
+    <span class="club-name">
+    <a href="#clubdetail-#{obj.id}-0">#{obj.title} #{(parseInt(obj.flag) & 1) == 0 ? "(等待批准)" : ""}</a>
+    </span>
+    </div>
+    <div class="sub-info">
+    #{obj.summary}
+    </div>
+    </div>
+    </div>
+    </li>
+
+</ul>
+</div>
+</div>
+</div>
+<div id="buger"></div>
+<style>
+include style.css
+</style>

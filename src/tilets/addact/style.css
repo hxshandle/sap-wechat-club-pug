@@ -1,0 +1,32 @@
+﻿h2 {
+        padding: 20px 15px;
+    }
+
+    .buttons {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+        bottom: 15px;
+    }
+
+        .buttons a {
+            flex: 1;
+        }
+
+    .weui-btn + .weui-btn {
+        margin-top: 0px;
+    }
+
+    .buttons a:first-child {
+        margin-right: 0.5rem;
+    }
+
+    .buttons a:last-child {
+        margin-left: 0.5rem;
+    }
+
+    #page-hook {
+        margin-bottom: 100px;
+    }

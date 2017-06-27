@@ -1,0 +1,31 @@
+<div id="rules-view">
+<button type="button" class="btn btn-default" id="new-comment-btn" onclick="c(this,'prepare',0);">
+<span class="glyphicon glyphicon-pencil"></span> 新的规则
+</button>
+<div class="rules-list">
+each obj,i in data
+    <div class="comment-item">
+    <div class="orignial comment">
+    <div>
+    <span>#{obj.summ} (ID: #{obj.id})</span>
+    <span></span>
+    <span type="button" onclick="c(this,'deleterule',#{obj.id});" class="delete-btn glyphicon glyphicon-comment pull-right"></span>
+    </div>
+    <div class="well well-sm">#{obj.title}<br />参数: <pre>#{obj.cxtinfo}</pre>规则: 
+    <div>if: #{obj.ifexpr}</div>
+    <div>then: #{obj.thenexpr}</div>
+    <div>else: #{obj.elseexpr}</div></div>
+    </div>
+    </div>
+</div>                        
+</div>
+
+<div id="rule-form" style="display:none">选择规则: <select id="rulesel" name="rulesel" onchange="c(this,'prepspec');"></select><br />输入变量: <textarea class="form-control" rows="3" id="spec" name="spec"></textarea><br />
+<input type=hidden id="cate" name="cate" value="#{udata.cate}" />
+<input type=hidden id="target" name="target" value="#{udata.target}" />
+<button id="post-btn" type="button" class="btn btn-primary pull-right" onclick="c(this,'addrule');"> 添 加 </button>
+<button id="post-btn" type="button" class="btn pull-right" onclick="c(this,'prepare',-1);"> 取 消 </button>
+</div>
+<style>
+include style.css
+</style>

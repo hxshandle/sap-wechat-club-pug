@@ -1,0 +1,109 @@
+- var tabIdx = 0
+div.weui-tab
+  include ../common/header.pug
+  div.weui-tab__panel
+    div.header-container
+      img(src='https://unsplash.it/720/400/?random',alt='', class='header-image')
+      div.header
+        h1.main-heading
+          =_wcname
+        span(class='tag main_tag')
+          |Running
+        span.tag
+          |PingPang
+        span.tag
+          |Bike
+        div.stats
+          span.stat-module
+            |俱乐部
+            span.stat-number
+              |2
+          span.stat-module
+            |活动
+            span.stat-number
+              |3
+          span.stat-module
+            |日程
+            span.stat-number
+              |11
+    div.overlay-header
+    <!--end header-->
+    div.body
+      img(src=_wclogo,alt=_wcname,class='body-image')
+      div.clear-both
+      div.activities
+        each obj in data
+          if (obj.etype == "1" || obj.etype == "3")
+            div.activity
+              div.left-cnt
+                span.time-1
+                  |7
+                span.time-2
+                  |Thu
+              div.right-cnt
+                div.event-name
+                  a(href='#actdetail-' + obj.usercnt + '-0')
+                    |受邀: #{obj.title}#{obj.etype == "3" ? "场次" : "活动"}
+                div.event-st
+                  i(class='fa fa-handshare-o')
+                  span
+                    |#{obj.nickname}: #{obj.location.length >10 ? obj.location.substring(0,8) + ".." : obj.location}, 
+                    a(href='javascript:;', onclick="c(this,'echo',[" + (obj.etype == '3' ? '2':'0') + "," + obj.id + "," + obj.usercnt + "," + obj.owner + "," + obj.clubid + "]);")
+                      |接受
+                    |/
+                    a(href='javascript:;', onclick="c(this,'echo',[1," + obj.id + "," + obj.usercnt + "," + obj.owner + "," + obj.clubid + "]);")
+                      |拒绝
+                    |[#{obj.lastupdate}]
+        each obj in data
+          if (obj.etype == "2" || obj.etype == "4")
+            div.activity
+              div.left-cnt
+                span.time-1
+                  |7
+                span.time-2
+                  |Thu
+              div.right-cnt
+                div.event-name
+                  a(href="#actdetail-" + obj.usercnt + "-0")
+                    |邀约: #{obj.title}#{obj.etype == "4" ? "场次" : "活动"}
+                div.event-st
+                  i(class="fa fa-handshare-o")
+                  span
+                    |邀请#{obj.nickname}: #{obj.location.length >10 ? obj.location.substring(0,8) + ".." : obj.location}, 
+                    a(href="javascript:;",onclick="c(this,'echo',[100," + obj.id + "," + obj.usercnt + "," + obj.owner + "," + obj.clubid + "]);")
+                      |取消
+                    |[#{obj.lastupdate}]
+        each obj in data
+          if (obj.etype == "0")
+            div.activity
+              div.left-cnt
+                span.time-1
+                  |7
+                span.time-2
+                  |Thu
+              div.right-cnt
+                div.event-name
+                  a(href="#sessdetail-" + obj.id + "-0")
+                    |#{obj.title}
+                div.event-st
+                  i(class="fa fa-hand-o-right")
+                  span
+                    |地点:#{obj.location} 
+                    |[#{obj.lastupdate}]
+        
+      <!--album-->
+      div.albums
+        div.album
+          img(src="https://unsplash.it/1000/400/?random", alt="")
+        div.album
+          img(src="https://unsplash.it/600/500/?random", alt="")
+        div.album
+          img(src="https://unsplash.it/600/400/?random" ,alt="")
+        div.album
+          img(src="https://unsplash.it/900/800/?random" ,alt="")
+        div.album
+          img(src="https://unsplash.it/300/400/?random" ,alt="")
+        div.album
+          img(src="https://unsplash.it/1024/768/?random" ,alt="")
+style
+  include style.css

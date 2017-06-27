@@ -1,0 +1,32 @@
+{
+  "name": "sap-weixin-club-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/serve build/html",
+    "build": "gulp",
+	"deploy": "node deploy.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://hxshandle:Iamallgood123@github.com/hxshandle/sap-weixin-club-ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hxshandle/sap-weixin-club-ui/issues"
+  },
+  "homepage": "https://github.com/hxshandle/sap-weixin-club-ui#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-copy": "^1.0.0",
+    "gulp-file-include": "^1.1.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-watch": "^4.3.11",
+    "node-sass": "^4.5.2",
+    "serve": "^5.1.5"
+  }
+}

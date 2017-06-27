@@ -1,0 +1,25 @@
+<ul class="activity-list">
+each obj in data
+    <li class="item">
+    <div class="active-item">
+    <div class="image-outer">
+    <img src="#{obj.filename}" alt="" class="band">
+    </div>
+    <div class="info">
+    <div class="title-1"><a href="##{tiletid}-#{obj.id}-0">#{obj.title}</a></div>
+    <div class="sub-info">
+    <i class="fa fa-user-o"></i>
+    <span class="count">#{obj.usercnt}</span>
+    </div>
+    <div class="sub-info">
+    <i class="fa fa-clock-o"></i>
+    <span class="count">#{obj.lastupdate}</span>
+    </div>
+    <div class="sub-info">
+    <i class="fa fa-map-marker"></i>
+    <span class="address">#{obj.summary}</span>
+    </div>
+    </div>
+    </div>
+    </li>
+</ul>

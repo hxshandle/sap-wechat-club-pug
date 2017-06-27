@@ -1,0 +1,52 @@
+<h2>#{title}</h2>
+<div class="weui-cells__title">#{hint}</div>
+<div class="weui-cells">
+<div class="weui-cell">
+<div class="weui-cell__bd">
+#{summary}
+</div>
+</div>
+</div>
+if (haseval) 
+  <div class="weui-cells__title">#{hint3}</div>
+  <div class="weui-cells">
+  <div class="weui-cell weui-cell_select">
+  <div class="weui-cell__bd">
+    if (data[0].clubid=="11")
+      <select class="weui-select" id="eval" name="eval">
+      <option value="0">Best Role Taker (#1)</option>
+      <option value="1">Best Role Taker (#2)</option>
+      <option value="2">Best Role Taker (#3)</option>
+      <option value="3">Best Table Topic Speaker (#1)</option>
+      <option value="4">Best Table Topic Speaker (#2)</option>
+      <option value="5">Best Table Topic Speaker (#3)</option>
+      <option value="6">Best Evaluator (#1)</option>
+      <option value="7">Best Evaluator (#2)</option>
+      <option value="8">Best Evaluator (#3)</option>
+      </select>
+    else
+      <input class="weui-input" type="text" id="eval" name="eval" placeholder="请输入数值">
+  </div>
+  </div>
+  </div>
+
+<div class="weui-cells__title">#{hint2}</div>
+<div class="weui-cells weui-cells_form">
+<div class="weui-cell">
+<div class="weui-cell__bd">
+<textarea class="weui-textarea" placeholder="请输入文本" rows="3" cols="30" name="echo" id="echo">#{content}</textarea>
+</div>
+</div>
+</div>
+<input type=hidden name="aid" id="aid" value="#{data[0].id}" />
+<input type=hidden name="cid" id="aid" value="#{data[0].clubid}" />
+<input type=hidden name="eflag" id="eflag" value="#{type}" />
+<div id="clist">
+</div>
+<div style="min-height:100px;height:100px"></div>
+<div class="buttons">
+<a href="javascript:history.back();" class="weui-btn weui-btn weui-btn_default">返回</a>
+</div>
+<style>
+include style.css
+</style>
