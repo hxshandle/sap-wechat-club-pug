@@ -59,5 +59,15 @@ gulp.task('copy-template', function () {
     .pipe(gulp.dest('build/html'))
 })
 
+gulp.task('pug2html', function () {
+  return gulp.src('src/**/*.pug')
+    .pipe(pug())
+    .pipe(gulp.dest('build/html'))
+})
+
+gulp.task('watch', function () {
+    gulp.watch('src/**/*.pug', { ignoreInitial: false }, ['pug2html']);
+});
+
 
 gulp.task('default', ['html', 'precompile', 'copy-template'])
