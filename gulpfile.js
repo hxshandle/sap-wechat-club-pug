@@ -74,7 +74,7 @@ gulp.task('pug2html', function () {
 })
 
 gulp.task('watch', function () {
-    gulp.watch('src/**/*.pug', { ignoreInitial: false }, ['pug2html', "copy-template2"]);
+    gulp.watch(['src/**/*.pug', 'src/**/*.css'], { ignoreInitial: false }, ['pug2html', "copy-template2"]);
 });
 
 
