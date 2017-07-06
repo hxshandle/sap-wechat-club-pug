@@ -1,4 +1,3 @@
-style.
   * {
     font-family: 'Roboto', sans-serif;
   }
@@ -15,8 +14,12 @@ style.
 
   .weui-navbar+.weui-tab__panel {
     padding-bottom: 50px;
-    padding-top: 0;
+    padding-top: 0px;
     overflow-x: hidden;
+  }
+
+  #buger+.weui-tab .weui-tab__panel {
+    padding-top: 42px;
   }
 
   .weui-navbar__item.weui-bar__item_on {

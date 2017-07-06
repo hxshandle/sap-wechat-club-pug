@@ -1,11 +1,19 @@
-<nav class="float-menu">
-<input type="checkbox" href="java" class="menu-open" id="menu-open" />
-<label class="menu-open-button" for="menu-open">
-<span class="burger"></span>
-</label>
-each obj in uo
-    <a href="#{obj.href || "javascript:;"}" class="nav-item" onclick="#{obj.click || ""}"><i class="fa fa-#{obj.icon}"></i></a>
-</nav>
-<style>
-include style.css
-</style>
+//- <nav class="float-menu">
+//- <input type="checkbox" href="java" class="menu-open" id="menu-open" />
+//- <label class="menu-open-button" for="menu-open">
+//- <span class="burger"></span>
+//- </label>
+//- each obj in uo
+//-     <a href="#{obj.href || "javascript:;"}" class="nav-item" onclick="#{obj.click || ""}"><i class="fa fa-#{obj.icon}"></i></a>
+//- </nav>
+
+input#nav_bar_toggle_chk.nav_bar_toggle_chk(name="nav_bar_toggle_chk" type="checkbox")
+.app__top-nav-bar
+    p
+      label.nav_bar_toggle_lbl(for="nav_bar_toggle_chk")
+        i.fa.fa-bars
+    each obj in uo
+      <a href="#{obj.href || "javascript:;"}" class="top-nav-item" onclick="#{obj.click || ""}"><i class="fa fa-#{obj.icon}"></i></a>
+
+style
+  include style.css
