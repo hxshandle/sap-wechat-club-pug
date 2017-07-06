@@ -59,5 +59,23 @@ gulp.task('copy-template', function () {
     .pipe(gulp.dest('build/html'))
 })
 
+gulp.task('copy-template2', function () {
+  return gulp.src(['src/**/*.*', '!src/**/*.pug', '!src/tilets/*.*'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('build/html'))
+})
+
+gulp.task('pug2html', function () {
+  return gulp.src('src/**/*.*')
+    .pipe(through.obj(regen()))
+})
+
+gulp.task('watch', function () {
+    gulp.watch(['src/**/*.pug', 'src/**/*.css'], { ignoreInitial: false }, ['pug2html', "copy-template2"]);
+});
+
 
 gulp.task('default', ['html', 'precompile', 'copy-template'])

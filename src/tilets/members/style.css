@@ -1,2 +1,24 @@
-﻿li.user_item a img{width:96px;height:96px;}
+﻿li.user_item a img{
+  border-radius: 10px;
+  width:96px;
+  height:96px;
+}
 li.user_item a img.medal{width:16px;height:16px;}
+li.user_item {
+  display: inline-block;
+  margin: 5px 12px;
+  width: 100px;
+}
+
+li.user_item .user__name {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: black;
+}
+
+li.user_item img{
+  border-radius: 10px;
+  width:96px;
+  height:96px;
+}
